@@ -1,24 +1,11 @@
-# README
+# Rocket Launches
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+Uses an API to pull in data for upcoming launches. Styled with Tailwind CSS.
 
-* System dependencies
+API at https://thespacedevs.com/llapi
 
-* Configuration
+For testing purposes I will use this endpoint:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://lldev.thespacedevs.com/2.2.0/launch/upcoming/
