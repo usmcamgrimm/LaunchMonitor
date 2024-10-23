@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get "launches" => "launches#index"
+  root "launches#index"
 end
