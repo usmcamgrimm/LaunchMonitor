@@ -1,11 +1,15 @@
-<ul>
-  <% @launchData.each do |launch| %>
-    <li>
-      <h2><%= launch[:name] %></h2>
-      <p>Mission: <%= launch[:mission] %></p>
-      <p>Launch Date: <%= launch[:launch_date] %></p>
-      <p>Status: <%= launch[:status] %></p>
-      <p>Location: <%= launch[:location] %></p>
-    </li>
-  <% end %>
-</ul>
+<% @launchData.each do |launch| %>
+  <div class="container mx-auto">
+    <div class="flex flex-col">
+      <div class="bg-dark shadow-md rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold"><%= launch[:name] %></h2>
+          <p>Mission: <%= launch[:mission] %></p>
+          <p>Launch Date: <%= launch[:launch_date] %></p>
+          <p>Status: <%= launch[:status] %></p>
+          <p>Location: <%= launch[:location] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
