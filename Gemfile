@@ -20,6 +20,8 @@ gem "tailwindcss-rails"
 gem "jbuilder"
 # HTTParty to make HTTP fun again! [https://github.com/jnunemaker/httparty]
 gem "httparty", "~> 0.22.0"
+# Live Reload
+gem 'rails_live_reload', '~> 0.3.6'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
