@@ -3,7 +3,9 @@
     <div class="flex flex-col">
       <div class="bg-dark shadow-md rounded-lg overflow-hidden">
         <div class="p-4">
-          <h2 class="text-lg font-semibold"><%= launch[:name] %></h2>
+          <h2 class="text-lg font-semibold"><%= launch[:rocketname] %></h2>
+          <%= image_tag launch.image, alt: "Rocket" %>
+          <p>Launch Agency: <%= launch[:lsp] %></p>
           <p>Mission: <%= launch[:mission] %></p>
           <p>Launch Date: <%= launch[:launch_date] %></p>
           <p>Status: <%= launch[:status] %></p>
