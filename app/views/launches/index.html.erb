@@ -1,15 +1,19 @@
 <% @launchData.each do |launch| %>
-  <div class="container mx-auto">
+  <div class="container mx-auto mb-16">
     <div class="flex flex-col">
-      <div class="bg-dark shadow-md rounded-lg overflow-hidden">
-        <div class="p-4">
-          <%= image_tag launch[:image], alt: "Rocket" %>
-          <h2 class="text-lg font-semibold"><%= launch[:rocketname] %></h2>
-          <p>Launch Agency: <%= launch[:lsp] %></p>
-          <p>Mission: <%= launch[:mission] %></p>
-          <p>Launch Date: <%= launch[:launch_date] %></p>
-          <p>Status: <%= launch[:status] %></p>
-          <p>Location: <%= launch[:location] %></p>
+      <div class="container bg-dark shadow-md rounded-md overflow-hidden">
+        <div class="flex flex-items-center justify-start space-x-6">
+          <div class="w-96 h-96 overflow-hidden flex-shrink-0">
+            <%= image_tag launch[:image], class: "object-cover w-full h-full rounded-lg", alt: "Rocket" %>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold"><%= launch[:rocketname] %></h2>
+            <p>Launch Agency: <%= launch[:lsp] %></p>
+            <p>Mission: <%= launch[:mission] %></p>
+            <p>Launch Date: <%= launch[:launch_date] %></p>
+            <p>Status: <%= launch[:status] %></p>
+            <p>Location: <%= launch[:location] %></p>
+          </div>
         </div>
       </div>
     </div>
