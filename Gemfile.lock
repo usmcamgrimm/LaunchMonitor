@@ -115,6 +115,8 @@ GEM
     ffi (1.17.0-x86_64-linux-musl)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     httparty (0.22.0)
       csv
       mini_mime (>= 1.0.0)
@@ -346,6 +348,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  heroicon (~> 1.0)
   httparty (~> 0.22.0)
   importmap-rails
   jbuilder
