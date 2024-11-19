@@ -5,7 +5,7 @@ module LaunchesHelper
   end
 
   def set_launch_time(launch_date)
-    time = Time.parse(launch_date)
-    time.strftime("%I:%M%P")
+    time = Time.parse(launch_date).in_time_zone(Time.zone)
+    time.strftime("%l:%M%P")
   end
 end
