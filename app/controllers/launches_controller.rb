@@ -12,7 +12,7 @@ class LaunchesController < ApplicationController
       {
         image: launch["image"],
         lsp: launch.dig("launch_service_provider", "name"),
-        rocketname: launch.dig("rocket", "configuration", "full_name"),
+        name: launch["name"],
         payload: launch.dig("mission", "name"),
         mission: launch.dig("mission", "description"),
         launch_date: launch["net"],
