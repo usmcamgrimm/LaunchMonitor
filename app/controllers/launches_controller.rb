@@ -10,8 +10,8 @@ class LaunchesController < ApplicationController
   def parse_data(response)
     response["results"].map do |launch|
       {
-        image: launch["image"],
-        # image: launch.dig("image", "image_url"),
+        # image: launch["image"],
+        image: launch.dig("image", "image_url") || "stock_launch.jpg",
         lsp: launch.dig("launch_service_provider", "name"),
         name: launch["name"],
         payload: launch.dig("mission", "name"),
