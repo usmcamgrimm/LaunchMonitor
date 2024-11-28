@@ -12,12 +12,12 @@ class LaunchesController < ApplicationController
       {
         image: launch["image"],
         # image: launch.dig("image", "image_url") || "stock_launch.jpg",
-        lsp: launch.dig("launch_service_provider", "name"),
+        lsp: launch.dig("launch_service_provider", "name") || "No agency provided",
         name: launch["name"],
-        payload: launch.dig("mission", "name"),
-        mission: launch.dig("mission", "description"),
+        payload: launch.dig("mission", "name") || "Unidentified payload",
+        mission: launch.dig("mission", "description") || "Mission details not set",
         launch_date: launch["net"],
-        status: launch.dig("status", "name"),
+        status: launch.dig("status", "name") || "Status update pending",
         location: launch.dig("pad", "location", "name") || "Unknown location set for launch"
       }
     end
