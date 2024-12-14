@@ -20,14 +20,27 @@
 
   <body>
     <header>
-      <h1 class="text-4xl sm:text-5xl text-center my-3">LaunchMonitor</h1>
+      <h1 class="text-4xl sm:text-5xl text-center my-5">LaunchMonitor</h1>
     </header>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-10 px-5 flex">
       <div class="content">
+        <div class="sm:w-full lg:w-1/4 px-4 sm:px-6 lg:px-8 cursor-pointer mb-6" data-action="click->expandable#toggle">
+          <button class="w-full bg-[#1d6ea1]/45 hover:bg-[#1a66a1]/70 hover:underline text-white py-2 px-4 rounded inline-flex items-center justify-center spaxe-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" width="24" height="24" class="mr-2 flex-shrink-0">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <rect x="3" y="5" width="2" height="2" />
+              <rect x="3" y="11" width="2" height="2" />
+              <rect x="3" y="17" width="2" height="2" />
+            </svg>
+            <span class="flex-grow text-center hover:scale-105">Toggle Preferences</span>
+          </button>
+        </div>
         <%= yield %>
       </div>
     </main>
     <footer>
-      <p class="text-center my-4">&copy;<%= Time.now.year %> <%= link_to "Adrian Grimm", "https://adriangrimm.com" %></p>
+      <p class="text-center my-4">&copy;<%= Time.now.year %> <%= link_to "Adrian Grimm", "https://github.com/usmcamgrimm" %></p>
   </body>
 </html>
