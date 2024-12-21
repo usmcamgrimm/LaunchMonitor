@@ -25,7 +25,14 @@
                    viewBox="0 0 24 24" 
                    stroke-width="1.5" 
                    stroke="currentColor" 
-                   class="h-6 w-6 inline-block ml-2 transition-transform duration-200 <%= launch[:status] == 'Go for Launch' ? 'text-green-500 hover:text-green-600' : 'text-orange-500 hover:text-orange-400' %>"
+                   class="h-6 w-6 inline-block ml-2 transition-transform duration-200 <%= case launch[:status] 
+                when 'Go for Launch', 'Launch Successful'
+                  'text-green-500 hover:text-green-600'
+                when 'Launch in Flight', 'Payload Deployed'
+                  'text-sky-500 hover:text-sky-600'
+                when 'To Be Confirmed', 'To Be Determined'
+                  'text-orange-500 hover:text-orange-600'
+              end %>">
                    data-expandable-target="arrow">
                 <path stroke-linecap="round" 
                       stroke-linejoin="round" 
