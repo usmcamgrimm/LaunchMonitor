@@ -20,8 +20,7 @@ class LaunchesController < ApplicationController
         status: launch.dig("status", "name") || "Status update pending",
         location: launch.dig("pad", "location", "name") || "Unknown location set for launch",
         hold_reason: launch["holdreason"],
-        fail_reason: launch["failreason"],
-        vid_url: launch.dig("mission", "vid_url") || "Video currently unavailable"
+        fail_reason: launch["failreason"]
       }
     end
   end
