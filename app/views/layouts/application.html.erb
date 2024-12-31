@@ -24,8 +24,8 @@
     </header>
     <main class="container mx-auto mt-10 px-5 flex">
       <div class="content">
-        <div class="sm:w-full lg:w-1/4 px-4 sm:px-6 lg:px-8 cursor-pointer mb-6" data-action="click->expandable#toggle">
-          <button class="w-full bg-[#1d6ea1]/45 hover:bg-[#1a66a1]/70 hover:underline text-white py-2 px-4 rounded inline-flex items-center justify-center spaxe-x-2">
+        <div class="sm:w-full lg:w-1/4 px-4 sm:px-6 lg:px-8 cursor-pointer mb-6" data-controller="expandable">
+          <button class="w-full bg-[#1d6ea1]/45 hover:bg-[#1a66a1]/70 hover:underline text-white py-2 px-4 rounded inline-flex items-center justify-center spaxe-x-2" data-action="click->expandable#toggle">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" width="24" height="24" class="mr-2 flex-shrink-0">
               <line x1="8" y1="6" x2="21" y2="6" />
               <line x1="8" y1="12" x2="21" y2="12" />
@@ -36,6 +36,9 @@
             </svg>
             <span class="flex-grow text-center">Toggle Preferences</span>
           </button>
+          <div data-expandable-target="content" class="mt-5 bg-dark">
+            <p class="text-center">Select from the locations below:</p>
+          </div>
         </div>
         <%= yield %>
       </div>
