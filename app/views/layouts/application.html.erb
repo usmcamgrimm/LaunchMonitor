@@ -36,8 +36,33 @@
             </svg>
             <span class="flex-grow text-center">Toggle Preferences</span>
           </button>
-          <div data-expandable-target="content" class="mt-5 bg-dark">
+          <div data-expandable-target="content" class="mt-5 bg-dark w-[300%]">
             <p class="text-center">Select from the locations below:</p>
+
+            <%= form_tag root_path, method: :get, class: "space-y-4", data: { controller: "location-filter" } do %>
+              <div class="space-y-2 max-h-60 overflow-y-auto">
+                <% @locations.each do |location| %>
+                  <label class="flex items-center space-x-3 p-2">
+                    <%= check_box_tag "locations[]", 
+                      location, 
+                      params[:locations]&.include?(location),
+                      class: "form-checkbox h-4 w-4 text-blue-600",
+                      data: { "location_filter_target": "checkbox" } 
+                    %>
+                    <span class="text-sm"><%= location %></span>
+                  </label>
+                <% end %>
+              </div>
+              
+              <div class="mt-4 flex justify-between">
+                <%= submit_tag "Apply", class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+                <%= button_tag "Reset", 
+                  type: "button",
+                  class: "bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600",
+                  data: { action: "location-filter#reset" } 
+                %>
+              </div>
+            <% end %>
           </div>
         </div>
         <%= yield %>
