@@ -2,7 +2,7 @@
 
 
 
-Uses an API to pull in data for upcoming launches. Styled with Tailwind CSS.
+Uses an API to pull in data for upcoming launches. Built on Rails 8, styled with Tailwind CSS.
 
 API at https://thespacedevs.com/llapi
 
