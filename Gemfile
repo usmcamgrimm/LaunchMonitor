@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.13'
 # HTTParty to make HTTP fun again! [https://github.com/jnunemaker/httparty]
 gem 'httparty', '~> 0.23.1'
 # Live Reload
-gem 'rails_live_reload', '~> 0.4.0'
+gem 'rails_live_reload', '~> 0.5.0'
 # Hero Icons
 gem "heroicon", "~> 1.0"
 # Use Redis adapter to run Action Cable in production
