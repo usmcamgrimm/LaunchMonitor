@@ -64,4 +64,4 @@ group :test do
   gem 'selenium-webdriver', '~> 4.33'
 end
 
-gem 'dockerfile-rails', '~> 1.7', '>= 1.7.9', :group => :development
+gem 'dockerfile-rails', '~> 1.7', :group => :development
