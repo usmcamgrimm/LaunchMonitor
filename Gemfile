@@ -15,7 +15,7 @@ gem 'turbo-rails', '~> 2.0'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails', '~> 1.3', '>= 1.3.4'
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails", "~> 4.2.3"
+gem "tailwindcss-rails", "~> 4.3.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder', '~> 2.13'
 # HTTParty to make HTTP fun again! [https://github.com/jnunemaker/httparty]
