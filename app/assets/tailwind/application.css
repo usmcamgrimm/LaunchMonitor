@@ -1,6 +1,5 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto&display=swap')
-layer(utilities);
+@layer utilities;
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
