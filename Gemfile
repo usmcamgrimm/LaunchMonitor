@@ -1,23 +1,23 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 8.0'
+gem 'rails', '~> 8.0', '>= 8.0.3'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails', '~> 3.5', '>= 3.5.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 2.7'
+gem 'sqlite3', '~> 2.7', '>= 2.7.4'
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 7.0'
+gem 'puma', '~> 7.0', '>= 7.0.4'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails', '~> 2.2'
+gem 'importmap-rails', '~> 2.2', '>= 2.2.2'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails', '~> 2.0'
+gem 'turbo-rails', '~> 2.0', '>= 2.0.17'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails', '~> 1.3', '>= 1.3.4'
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails", "~> 4.3.0"
+gem 'tailwindcss-rails', '~> 4.3'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem 'jbuilder', '~> 2.14'
+gem 'jbuilder', '~> 2.14', '>= 2.14.1'
 # HTTParty to make HTTP fun again! [https://github.com/jnunemaker/httparty]
 gem 'httparty', '~> 0.23.1'
 # Live Reload
@@ -37,7 +37,7 @@ gem "heroicon", "~> 1.0"
 gem 'tzinfo-data', '~> 1.2025', '>= 1.2025.1', platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '~> 1.18'
+gem 'bootsnap', '~> 1.18', '>= 1.18.6'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
