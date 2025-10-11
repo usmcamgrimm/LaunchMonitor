@@ -44,30 +44,31 @@
           </div>
           <div data-expandable-target="content" class="mt-5 bg-dark w-full">
             <p class="text-left text-base font-bold">Select from the locations below:</p>
-
-            <%= form_tag root_path, method: :get, class: "space-y-4", data: { controller: "location-filter" } do %>
+            <%= form_tag root_path, method: :get, class: "space-y-4" do %>
               <div class="space-y-2">
                 <% @locations.each do |location| %>
                   <label class="flex items-center space-x-3 p-2">
-                    <%= check_box_tag "locations[]", 
-                      location, 
-                      params[:locations]&.include?(location),
-                      class: "form-checkbox h-4 w-4 text-blue-600",
-                      data: { "location_filter_target": "checkbox" } 
+                    <%= check_box_tag "locations[]",
+                      location,
+                      (session[:selected_locations] || []).include?(location),
+                      class: "form-checkbox h-4 w-4 text-blue-600"
                     %>
                     <span class="text-sm"><%= location %></span>
                   </label>
                 <% end %>
               </div>
-              
+
               <div class="mt-4 flex justify-start space-x-4">
                 <%= submit_tag "Apply",
-                  class: "bg-blue-600 text-white px-4 py-2 rounded-sm hover:bg-blue-700 cursor-pointer" 
+                  name: "commit",
+                  value: "Apply",
+                  class: "bg-blue-600 text-white px-4 py-2 rounded-sm hover:bg-blue-700 cursor-pointer"
                 %>
-                <%= button_tag "Reset", 
-                  type: "button",
-                  class: "bg-gray-500 text-white px-4 py-2 rounded-sm hover:bg-gray-600",
-                  data: { action: "location-filter#reset" } 
+
+                <%= submit_tag "Reset",
+                  name: "commit",
+                  value: "Reset",
+                  class: "bg-gray-500 text-white px-4 py-2 rounded-sm hover:bg-gray-600 cursor-pointer"
                 %>
               </div>
             <% end %>
