@@ -6,7 +6,7 @@
       <div class="container bg-dark shadow-md rounded-md overflow-hidden">
         <div class="flex flex-col sm:flex-row items-start w-full max-w-(--breakpoint-xl) mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-0 sm:space-x-6">
           <div class="w-full sm:w-96 h-96 overflow-hidden shrink-0">
-            <%= image_tag launch[:image], class: "object-cover w-full h-full rounded-lg", alt: "Rocket" %>
+            <%= image_tag(launch[:image].presence || "stock_launch.jpg", class: "object-cover w-full h-full rounded-lg", alt: "Rocket") %>
           </div>
           <div class="text-left mt-4 sm:mt-0 w-full">
             <div class="flex items-center justify-between cursor-pointer" data-action="click->expandable#toggle">
