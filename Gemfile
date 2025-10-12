@@ -19,7 +19,7 @@ gem 'tailwindcss-rails', '~> 4.3'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder', '~> 2.14', '>= 2.14.1'
 # HTTParty to make HTTP fun again! [https://github.com/jnunemaker/httparty]
-gem 'httparty', '~> 0.23.1'
+gem 'httparty', '~> 0.23.2'
 # Live Reload
 gem 'rails_live_reload', '~> 0.5.0'
 # Hero Icons
