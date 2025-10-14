@@ -1,7 +1,7 @@
 class LaunchesController < ApplicationController
   def index
-    response = HTTParty.get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/")
-    # response = HTTParty.get("https://ll.thespacedevs.com/2.3.0/launches/upcoming/")
+    # response = HTTParty.get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/")
+    response = HTTParty.get("https://ll.thespacedevs.com/2.3.0/launches/upcoming/")
     @launchData = parse_data(response)
     @locations = @launchData.map { |launch| launch[:location] }.uniq
 
