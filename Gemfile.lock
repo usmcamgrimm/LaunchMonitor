@@ -79,7 +79,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     base64 (0.3.0)
-    bigdecimal (3.3.1)
+    bigdecimal (4.0.1)
     bindex (0.8.1)
     bootsnap (1.20.1)
       msgpack (~> 1.2)
@@ -122,7 +122,7 @@ GEM
       activesupport (>= 6.1)
     heroicon (1.0.0)
       rails (>= 5.2)
-    httparty (0.23.2)
+    httparty (0.24.0)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -162,8 +162,8 @@ GEM
     mini_portile2 (2.8.9)
     minitest (5.26.0)
     msgpack (1.8.0)
-    multi_xml (0.7.2)
-      bigdecimal (~> 3.1)
+    multi_xml (0.8.0)
+      bigdecimal (>= 3.1, < 5)
     net-imap (0.5.12)
       date
       net-protocol
@@ -379,7 +379,7 @@ DEPENDENCIES
   debug
   dockerfile-rails (~> 1.7)
   heroicon (~> 1.0)
-  httparty (~> 0.23.2)
+  httparty (~> 0.24.0)
   importmap-rails (~> 2.2, >= 2.2.2)
   jbuilder (~> 2.14, >= 2.14.1)
   puma (~> 7.1)
