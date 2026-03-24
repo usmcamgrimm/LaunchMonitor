@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_09_150119) do
+ActiveRecord::Schema[8.1].define(version: 2025_01_09_150119) do
   create_table "launches", force: :cascade do |t|
-    t.string "name"
-    t.string "mission"
-    t.string "description"
-    t.string "rocketname"
-    t.datetime "launchdate"
-    t.string "status"
-    t.string "location"
     t.datetime "created_at", null: false
+    t.string "description"
+    t.datetime "launchdate"
+    t.string "location"
+    t.string "mission"
+    t.string "name"
+    t.string "rocketname"
+    t.string "status"
     t.datetime "updated_at", null: false
   end
 end
