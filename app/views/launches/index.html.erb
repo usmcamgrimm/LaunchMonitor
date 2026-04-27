@@ -9,8 +9,8 @@
             <%= image_tag launch[:image], class: "object-cover w-full h-full rounded-lg", alt: "#{launch[:lsp]} \u2014 #{launch[:rocket]}" %>
           </div>
           <div class="text-left mt-4 sm:mt-0 w-full">
-            <div class="flex items-center justify-between cursor-pointer" data-action="click->expandable#toggle">
-              <h2 class="text-center sm:text-left text-xl sm:text-3xl font-bold underline underline-offset-8 mb-5 sm:mb-0 <%= status_color(launch[:status]) %>" aria-label="<%= launch[:status] %>">
+            <div class="flex items-center justify-between cursor-pointer" data-action="click->expandable#toggle" aria-label="Toggle details for <%= launch[:name] %>">
+              <h2 class="text-center sm:text-left text-xl sm:text-3xl font-bold underline underline-offset-8 mb-5 sm:mb-0 <%= status_color(launch[:status]) %>" aria-label="<%= launch[:name] %>">
                 <%= launch[:name] %>
               </h2>
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@
                    stroke-width="1.5"
                    stroke="currentColor"
                    class="h-6 w-6 inline-block ml-2 transition-transform duration-200 <%= status_color(launch[:status]) %>"
-                   aria-label="<%= launch[:status] %>"
+                   aria-label="Toggle the rocket for more details"
                    data-expandable-target="arrow">
                 <path stroke-linecap="round"
                       stroke-linejoin="round"
