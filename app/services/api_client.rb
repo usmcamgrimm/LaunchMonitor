@@ -1,8 +1,6 @@
 class ApiClient
-  include HTTParty
-
-  # Use the ENV variable, default to the production URL if not set
-  BASE_URI =  ENV.fetch("SPACE_DEVS_BASE_URI", "https://ll.thespacedevs.com/2.2.0/launch/upcoming/")
+  # Use the ENV variable and set a fallback in cases where the variable isn't already set.
+  BASE_URI =  ENV.fetch("SPACE_DEVS_BASE_URI", "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/")
 
   def fetch_launches
     response = HTTParty.get(BASE_URI)
