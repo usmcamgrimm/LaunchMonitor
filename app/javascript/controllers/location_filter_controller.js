@@ -5,7 +5,6 @@ export default class extends Controller {
 
   reset(event) {
     event.preventDefault()
-    console.log("Reset clicked!")
     this.checkboxTargets.forEach(checkbox => {
       checkbox.checked = false
     })
