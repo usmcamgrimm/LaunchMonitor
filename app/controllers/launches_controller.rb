@@ -1,8 +1,8 @@
 class LaunchesController < ApplicationController
   def index
-    # response = HTTParty.get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/")
-    response = HTTParty.get("https://ll.thespacedevs.com/2.3.0/launches/upcoming/")
-    @launchData = parse_data(response)
+    result = SpaceDevs::ApiClient.upcoming
+    @error = result.error
+    @launchData = parse_data(result.launches)
     @locations = @launchData.map { |launch| launch[:location] }.uniq
 
     if params[:locations].present?
@@ -13,7 +13,7 @@ class LaunchesController < ApplicationController
   private
 
   def parse_data(response)
-    response["results"].map do |launch|
+    response.map do |launch|
       {
         image: launch["image"].is_a?(Hash) ? launch["image"]["image_url"] : launch["image"] || "stock_launch.jpg",
         lsp: launch.dig("launch_service_provider", "name") || "No agency provided",
