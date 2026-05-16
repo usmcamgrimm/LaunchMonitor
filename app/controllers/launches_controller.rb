@@ -2,11 +2,11 @@ class LaunchesController < ApplicationController
   def index
     result = SpaceDevs::ApiClient.upcoming
     @error = result.error
-    @launchData = parse_data(result.launches)
-    @locations = @launchData.map { |launch| launch[:location] }.uniq
+    @launch_data = parse_data(result.launches)
+    @locations = @launch_data.map { |launch| launch[:location] }.uniq
 
     if params[:locations].present?
-      @launchData = @launchData.select { |launch| params[:locations].include?(launch[:location]) }
+      @launch_data = @launch_data.select { |launch| params[:locations].include?(launch[:location]) }
     end
   end
 
