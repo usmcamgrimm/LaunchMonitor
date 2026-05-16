@@ -1,4 +1,4 @@
-<% @launchData.each do |launch| %>
+<% @launch_data.each do |launch| %>
   <div class="container mx-auto mb-16">
     <div class="flex flex-col" data-controller="expandable">
       <div class="container bg-dark shadow-md rounded-md overflow-hidden">
@@ -64,7 +64,12 @@
                 </div>
               </div>
               <p class="mt-3 mb-2"><b>Launch Agency:</b> <%= launch[:lsp] %></p>
-              <p class="my-2"><b>Launch Date: </b><%= set_launch_date(launch[:launch_date]) %> - <%= set_launch_time(launch[:launch_date]) %></p>
+              <p>
+                <b>Launch Date: </b> 
+                <time data-controller="localtime" datetime="<%= launch[:launch_date]  %>">
+                  <%= launch[:launch_date] %>
+                </time>
+              </p>
               <p class="my-2"><b>Launch Status:</b> <%= launch[:status] %></p>
               <p class="my-2"><b>Result:</b> <%= launch[:description] %></p>
               <p class="mt-2"><b>Location:</b> <%= launch[:location] %></p>
