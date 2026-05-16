@@ -22,9 +22,8 @@ class LaunchesController < ApplicationController
         mission: launch.dig("mission", "description") || "Mission details not set",
         launch_date: launch["net"],
         status: launch.dig("status", "name") || "Status update pending",
-        location: launch.dig("pad", "location", "name") || "Unknown location set for launch",
-        hold_reason: launch["holdreason"],
-        fail_reason: launch["failreason"]
+        description: launch.dig("status", "description") || "",
+        location: launch.dig("pad", "location", "name") || "Unknown location set for launch"
       }
     end
   end
