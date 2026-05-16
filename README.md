@@ -4,9 +4,7 @@
 
 Track upcoming rocket launches in real time, powered by live data from the Space Devs API.
 
-🌐 **Live site:** [launch-monitor.fly.dev](https://launch-monitor.fly.dev/)
-
----
+🌐 Deployed and hosted on [Fly.io](https://fly.io/).
 
 ## About
 
@@ -26,4 +24,8 @@ Launch Monitor pulls upcoming launch data from the [Space Devs API](https://thes
 
 **HTTParty** is used to query the [Space Devs Launch Library 2 API](https://ll.thespacedevs.com/docs/).
 
-Deployed and hosted on [Fly.io](https://fly.io/).
+## Environment variables
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `SPACE_DEVS_BASE_URI` | `https://ll.thespacedevs.com/2.3.0/launches/upcoming/` | TheSpaceDevs API base. Use `https://lldev.thespacedevs.com/2.2.0/launch/upcoming/` for local/dev. |
+---
