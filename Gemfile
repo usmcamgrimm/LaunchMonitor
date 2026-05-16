@@ -53,6 +53,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", "~> 1.1"
+
+  # Testing
+  gem "rspec-rails"
+  gem "webmock", "~> 3.26", ">= 3.26.2"
 end
 
 group :development do

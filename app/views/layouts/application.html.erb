@@ -72,6 +72,15 @@
       </div>
     </header>
     <main class="grow container mx-auto mt-10 px-5 flex">
+      <% if @error %>
+        <div class="container mx-auto text-center">
+          Unable to reach TheSpaceDevs API. Please try again in a minute.
+        </div>
+      <% elsif @launchData.empty? %>
+        <div class="container mx-auto text-center">
+          No launches found for your filters. Please try again.
+        </div>
+      <% end %>
       <div class="content">
         <%= yield %>
       </div>
