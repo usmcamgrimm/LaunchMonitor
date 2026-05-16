@@ -1,16 +1,17 @@
 class LaunchesController < ApplicationController
   def index
-    # response = HTTParty.get("https://lldev.thespacedevs.com/2.2.0/launch/upcoming/")
     response = HTTParty.get("https://ll.thespacedevs.com/2.3.0/launches/upcoming/")
-    @launchData = parse_data(response)
-    @locations = @launchData.map { |launch| launch[:location] }.uniq
-
-    if params[:locations].present?
-      @launchData = @launchData.select { |launch| params[:locations].include?(launch[:location]) }
-    end
+    @launch_data = parse_data(response)
+    @locations = @launch_data.map { |l| l[:location] }.uniq
+    @launch_data = filter_by_location(@launch_data)
   end
 
   private
+
+  def filter_by_location(launches)
+    return launches if params[:locations].blank?
+    launches.select { |l| params[:locations].include?(l[:location]) }
+  end
 
   def parse_data(response)
     response["results"].map do |launch|
