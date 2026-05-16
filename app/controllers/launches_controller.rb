@@ -17,6 +17,7 @@ class LaunchesController < ApplicationController
       {
         image: launch["image"].is_a?(Hash) ? launch["image"]["image_url"] : launch["image"] || "stock_launch.jpg",
         lsp: launch.dig("launch_service_provider", "name") || "No agency provided",
+        rocket: launch.dig("rocket", "configuration", "full_name") || "No rocket configured yet",
         name: launch["name"],
         payload: launch.dig("mission", "name") || "Unidentified payload",
         mission: launch.dig("mission", "description") || "Mission details not set",
