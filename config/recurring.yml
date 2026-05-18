@@ -1,0 +1,9 @@
+production:
+  refresh_launches:
+  class: RefreshLaunchesJob
+  schedule: every 5 minutes
+
+development:
+refresh_launches:
+  class: RefreshLaunchesJob
+  schedule: every 5 minutes

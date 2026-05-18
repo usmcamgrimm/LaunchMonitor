@@ -1,8 +1,10 @@
 class LaunchesController < ApplicationController
   def index
+    Rails.logger.info "!!!! IS CACHE PRESENT IN SERVER?: #{Rails.cache.exist?("spacedevs:launches:upcoming")}"
     result = SpaceDevs::ApiClient.upcoming
     @error = result.error
-    @launch_data = parse_data(result.launches)
+    cached_launches = Rails.cache.read("spacedevs:launches:upcoming") || []
+    @launch_data = parse_data(cached_launches)
     @locations = @launch_data.map { |launch| launch[:location] }.uniq
 
     if params[:locations].present?
