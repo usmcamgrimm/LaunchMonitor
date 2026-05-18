@@ -1,6 +1,5 @@
 class LaunchesController < ApplicationController
   def index
-    Rails.logger.info "!!!! IS CACHE PRESENT IN SERVER?: #{Rails.cache.exist?("spacedevs:launches:upcoming")}"
     result = SpaceDevs::ApiClient.upcoming
     @error = result.error
     cached_launches = Rails.cache.read("spacedevs:launches:upcoming") || []
