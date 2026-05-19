@@ -1,7 +1,5 @@
 class LaunchesController < ApplicationController
   def index
-    result = SpaceDevs::ApiClient.upcoming
-    @error = result.error
     cached_launches = Rails.cache.read("spacedevs:launches:upcoming") || []
     @launch_data = parse_data(cached_launches)
     @locations = @launch_data.map { |launch| launch[:location] }.uniq
