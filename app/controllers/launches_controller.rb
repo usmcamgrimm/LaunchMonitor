@@ -1,8 +1,11 @@
 class LaunchesController < ApplicationController
+  LAUNCHES_CACHE_KEY = "spacedevs:launches:upcoming"
+  ERROR_CACHE_KEY = "spacedevs:launches:upcoming:error"
+
   def index
-    result = SpaceDevs::ApiClient.upcoming
-    @error = result.error
-    @launch_data = parse_data(result.launches)
+    cached_launches = Rails.cache.read(LAUNCHES_CACHE_KEY) || []
+    @launch_data = parse_data(cached_launches)
+    @error = Rails.cache.read(ERROR_CACHE_KEY) if @launch_data.empty?
     @locations = @launch_data.map { |launch| launch[:location] }.uniq
 
     if params[:locations].present?
