@@ -37,15 +37,5 @@ test:
 # Similarly, if you deploy your application as a Docker container, you must
 # ensure the database is located in a persisted volume.
 production:
-  primary:
-    <<: *default
-    database: /data/production.sqlite3
-    journal_mode: wal
-    synchronous: normal
-  queue:
-    <<: *default
-    database: /data/production_queue.sqlite3
-    migrations_paths: db/queue_migrate
-    journal_mode: wal
-    synchronous: normal
+  <<: *default
   # database: path/to/persistent/storage/production.sqlite3

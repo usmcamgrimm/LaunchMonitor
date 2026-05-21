@@ -26,8 +26,6 @@ gem "httparty", "~> 0.24.2"
 gem "rails_live_reload", "~> 0.5.0"
 # Hero Icons
 gem "heroicon", "~> 1.0"
-# Image Processing
-gem "image_processing", "~> 1.14"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
