@@ -26,8 +26,10 @@ gem "httparty", "~> 0.24.2"
 gem "rails_live_reload", "~> 0.5.0"
 # Hero Icons
 gem "heroicon", "~> 1.0"
+# Solid_Queue
+gem "solid_queue", "~> 1.4"
 # Image Processing
-gem "image_processing", "~> 1.14"
+gem "image_processing", "~> 2.0"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -73,5 +75,3 @@ group :test do
 end
 
 gem "dockerfile-rails", "~> 1.7", group: :development
-
-gem "solid_queue", "~> 1.4"
