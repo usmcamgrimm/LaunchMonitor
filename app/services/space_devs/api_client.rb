@@ -10,12 +10,14 @@ module SpaceDevs
     end
 
     def self.upcoming
-      response = get(BASE_URI)
-      if response.success?
-        Result.new(launches: Array(response["results"]))
-      else
-        Rails.logger.warn("[SpaceDevs] upstream #{response.code}")
-        Result.new(launches: [], error: :upstream_error)
+      Rails.cache.fetch("spacedevs:launches:upcoming", expires_in: 5.minutes) do
+        response = get(BASE_URI)
+        if response.success?
+          Result.new(launches: Array(response["results"]))
+        else
+          Rails.logger.warn("[SpaceDevs] upstream #{response.code}")
+          Result.new(launches: [], error: :upstream_error)
+        end
       end
     rescue HTTParty::Error, SocketError, Net::OpenTimeout, Net::ReadTimeout, Errno::ECONNREFUSED => e
       Rails.logger.warn("[SpaceDevs] network error: #{e.class}: #{e.message}")
