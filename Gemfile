@@ -67,7 +67,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver", "~> 4.41"
+  gem "selenium-webdriver", "~> 4.44"
   gem "webmock", "~> 3.26", ">= 3.26.2"
 end
 
