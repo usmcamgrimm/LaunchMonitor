@@ -1,0 +1,27 @@
+{
+  "count": 1,
+  "results": [
+    {
+      "name": "Falcon 9 | Starlink",
+      "net": "2026-05-01T12:00:00Z",
+      "status": {
+        "name": "Go for Launch"
+      },
+      "pad": {
+        "location": {
+          "name": "Cape Canaveral"
+        }
+      },
+      "mission": {
+        "name": "Starlink 9-1",
+        "description": "Batch of Starlink satellites"
+      },
+      "launch_service_provider": {
+        "name": "SpaceX"
+      },
+      "image": {
+        "image_url": "https://example.com/rocket.jpg"
+      }
+    }
+  ]
+}
