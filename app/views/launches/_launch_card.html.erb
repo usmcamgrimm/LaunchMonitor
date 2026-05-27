@@ -1,0 +1,45 @@
+<% @launch_data.each do |launch_card| %>
+  <div class="container mx-auto mb-16">
+    <div class="flex flex-col" data-controller="expandable">
+      <div class="container bg-dark shadow-md rounded-md overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-start w-full max-w-(--breakpoint-xl) mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-0 sm:space-x-6">
+          <div class="w-full sm:w-96 h-96 overflow-hidden shrink-0">
+            <%= image_tag launch_card[:image], class: "object-cover w-full h-full rounded-lg", alt: "#{launch_card[:lsp]} \u2014 #{launch_card[:rocket]}" %>
+          </div>
+          <div class="text-left mt-4 sm:mt-0 w-full">
+            <div class="flex items-center justify-between cursor-pointer" data-action="click->expandable#toggle" aria-label="Toggle details for <%= launch_card[:name] %>">
+              <h2 class="text-center sm:text-left text-xl sm:text-3xl font-bold underline underline-offset-8 mb-5 sm:mb-0 <%= status_color(launch_card[:status]) %>" aria-label="<%= launch_card[:name] %>">
+                <%= launch_card[:name] %>
+              </h2>
+              <span data-expandable-target="arrow" class="inline-block transition-transform duration-200">
+                <%= heroicon "rocket-launch", options: { class: "h-6 w-6 #{status_color(launch_card[:status])}" } %>
+              </span>
+            </div>
+
+            <div class="mt-4">
+              <%= render "countdown", launch: launch_card %>
+              <p class="mt-3 mb-2"><b>Launch Agency:</b> <%= launch_card[:lsp] %></p>
+              <p>
+                <b>Launch Date: </b> 
+                <time data-controller="localtime" datetime="<%= launch_card[:launch_date]  %>">
+                  <%= launch_card[:launch_date] %>
+                </time>
+              </p>
+              <p class="my-2"><b>Launch Status:</b> <%= launch_card[:status] %></p>
+              <p class="my-2"><b>Result:</b> <%= launch_card[:description] %></p>
+              <p class="mt-2"><b>Location:</b> <%= launch_card[:location] %></p>
+            </div>
+
+            <!-- Expandable Content -->
+            <div class="mt-4 transition-all duration-300 ease-in-out" data-expandable-target="content">
+              <div class="mt-4 space-y-2">
+                <p class="my-2"><b>Payload:</b> <%= launch_card[:payload] %></p>
+                <p class="my-2"><b>Mission:</b> <%= launch_card[:mission] %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
