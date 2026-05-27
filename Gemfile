@@ -17,7 +17,7 @@ gem "stimulus-rails", "~> 1.3", ">= 1.3.4"
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails", "~> 4.4"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder", "~> 2.14", ">= 2.14.1"
+gem "jbuilder", "~> 2.15"
 # Autoload dotenv
 gem "dotenv-rails", "~> 3.2"
 # HTTParty to make HTTP fun again! [https://github.com/jnunemaker/httparty]
