@@ -25,7 +25,7 @@ gem "httparty", "~> 0.24.2"
 # Live Reload
 gem "rails_live_reload", "~> 0.5.0"
 # Hero Icons
-gem "heroicon", "~> 1.0"
+gem "heroicons", "~> 2.2"
 # Solid_Queue
 gem "solid_queue", "~> 1.4"
 # Image Processing
