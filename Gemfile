@@ -43,7 +43,7 @@ gem "image_processing", "~> 2.0"
 gem "tzinfo-data", "~> 1.2025", ">= 1.2025.1", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", "~> 1.23"
+gem "bootsnap", "~> 1.24"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
