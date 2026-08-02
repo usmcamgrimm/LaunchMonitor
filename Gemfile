@@ -1,15 +1,15 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.1"
+gem "rails", ">= 8.1.3.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails", "~> 3.5", ">= 3.5.2"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 2.9"
+gem "sqlite3", ">= 2.9.5"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 7.2"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails", "~> 2.2"
+gem "importmap-rails", ">= 2.2.3"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails", "~> 2.0"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
@@ -30,6 +30,7 @@ gem "heroicons", "~> 2.2"
 gem "solid_queue", "~> 1.4"
 # Image Processing
 gem "image_processing", "~> 2.0"
+gem "ruby-vips", ">= 2.3"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
